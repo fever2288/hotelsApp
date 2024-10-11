@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ImageSourcePropType } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
-import { Container, InfoImage, InfoText } from './info.styles';
+import { Container, InfoImage, InfoText, ButtonLabel } from './info.styles';
 import Button from '../button/button.component';
 
 interface InfoProps {
@@ -34,6 +34,7 @@ const Info: React.FC<InfoProps> = ({
 }) => {
   const theme = useTheme();
   const { t } = useTranslation();
+
   return (
     <Container testID="info-container">
       <InfoImage source={image} testID="info-image" />
@@ -45,7 +46,9 @@ const Info: React.FC<InfoProps> = ({
         {text}
       </InfoText>
       {isButtonVisible && onButtonClick && (
-        <Button text={t('tryAgain')} onPress={onButtonClick} testID="info-button" />
+        <Button onPress={onButtonClick} style={{ backgroundColor: theme.colors.secondary }}>
+          <ButtonLabel>{t('tryAgain')}</ButtonLabel>
+        </Button>
       )}
     </Container>
   );

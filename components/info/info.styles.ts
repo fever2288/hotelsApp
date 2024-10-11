@@ -26,3 +26,10 @@ export const InfoText = styled(Text)<{ isError: boolean; errorColor: string }>`
   margin-bottom: 10px;
   padding: 12px;
 `;
+
+export const ButtonLabel = styled(Text)`
+  color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-size: ${({ theme }) => theme.fontSizes.title};
+`;

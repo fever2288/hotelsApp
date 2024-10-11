@@ -3,5 +3,6 @@
   "loading": "Loading...",
   "searchPlaceholder": "Search hotels...",
   "errorFetchingData": "An error occurred while fetching data",
-  "noHotels": "No hotels found. Try searching for another"
+  "noHotels": "No hotels found. Try searching for another",
+  "filterByStars": "Filter by number of stars"
 }
