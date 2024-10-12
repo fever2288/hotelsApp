@@ -1,7 +1,6 @@
 import { render, fireEvent } from '@testing-library/react-native';
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
-import { useTranslation } from 'react-i18next';
 
 import StarFilter from './star-filter.component';
 import { mockTheme } from '../../utils/test-mock-data';
