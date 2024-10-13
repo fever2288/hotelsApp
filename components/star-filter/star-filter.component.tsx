@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components/native';
 
-import { FilterContainer, FilterTitle, StarContainer } from './star-filter.styles';
+import {
+  FilterContainer,
+  FilterTitle,
+  StarContainer,
+  IndividualContainer,
+} from './star-filter.styles';
 import Button from '../button/button.component';
 import Star from '../star/star.component';
 
@@ -37,18 +42,19 @@ const StarFilter: React.FC<StarFilterProps> = ({ onFilterChange }) => {
 
       <StarContainer>
         {Array.from({ length: 5 }, (_, index) => index + 1).map((star) => (
-          <Button
-            key={star}
-            onPress={() => toggleStar(star)}
-            testID={`star-button-${star}`}
-            style={{
-              backgroundColor: selectedStars.includes(star)
-                ? theme.colors.secondary
-                : theme.colors.primary,
-            }}
-          >
-            <Star numberOfStars={star} isSelected={selectedStars.includes(star)} />
-          </Button>
+          <IndividualContainer key={star}>
+            <Button
+              onPress={() => toggleStar(star)}
+              testID={`star-button-${star}`}
+              style={{
+                backgroundColor: selectedStars.includes(star)
+                  ? theme.colors.secondary
+                  : theme.colors.primary,
+              }}
+            >
+              <Star numberOfStars={star} isSelected={selectedStars.includes(star)} />
+            </Button>
+          </IndividualContainer>
         ))}
       </StarContainer>
     </FilterContainer>

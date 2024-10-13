@@ -18,6 +18,7 @@ import Star from '../star/star.component';
 interface HotelProps {
   hotel: HotelType;
   onPress: (hotelId: number) => void;
+  disabled?: boolean;
 }
 
 /**
@@ -27,14 +28,19 @@ interface HotelProps {
  * @param {HotelProps} props - The props for the Hotel component.
  * @param {HotelType} props.hotel - The hotel data to display.
  * @param {function} props.onPress - Function to call when hotel is pressed.
+ * @param {boolean} [props.disabled=false] - Whether the component is disabled.
  * @returns {JSX.Element} The rendered Hotel component.
  */
-const HotelComponent: React.FC<HotelProps> = ({ hotel, onPress }) => {
+const HotelComponent: React.FC<HotelProps> = ({ hotel, onPress, disabled = false }) => {
   const backgroundImage =
     hotel.gallery && hotel.gallery.length > 0 ? { uri: hotel.gallery[0] } : noImage;
 
   return (
-    <TouchableOpacity onPress={() => onPress(hotel.id)} testID="hotel-touchable">
+    <TouchableOpacity
+      onPress={() => !disabled && onPress(hotel.id)}
+      disabled={disabled}
+      testID="hotel-touchable"
+    >
       <HotelContainer>
         <BackgroundImage source={backgroundImage} testID="hotel-background">
           <StarContainer>

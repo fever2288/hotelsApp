@@ -3,6 +3,7 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
 
 import i18n from './i18n';
@@ -42,7 +43,9 @@ const App = () => {
       <HotelProvider>
         <ThemeProvider theme={theme}>
           <I18nextProvider i18n={i18n}>
-            <Navigation />
+            <SafeAreaProvider>
+              <Navigation />
+            </SafeAreaProvider>
           </I18nextProvider>
         </ThemeProvider>
       </HotelProvider>

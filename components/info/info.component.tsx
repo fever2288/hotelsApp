@@ -12,6 +12,7 @@ interface InfoProps {
   isButtonVisible: boolean;
   onButtonClick?: () => void;
   isError?: boolean;
+  testID?: string;
 }
 
 /**
@@ -23,6 +24,7 @@ interface InfoProps {
  * @param {boolean} props.isButtonVisible - Determines whether the button is visible.
  * @param {function} [props.onButtonClick] - Callback function for button click, required if button is visible.
  * @param {boolean} [props.isError] - If true, the text displays with an error background color.
+ * @param {string} [props.testID] - Optional test identifier for testing purposes.
  * @returns {JSX.Element} The rendered Info component.
  */
 const Info: React.FC<InfoProps> = ({
@@ -31,12 +33,13 @@ const Info: React.FC<InfoProps> = ({
   isButtonVisible,
   onButtonClick,
   isError = false,
+  testID,
 }) => {
   const theme = useTheme();
   const { t } = useTranslation();
 
   return (
-    <Container testID="info-container">
+    <Container testID={testID || 'info-container'}>
       <InfoImage source={image} testID="info-image" />
       <InfoText
         isError={isError}

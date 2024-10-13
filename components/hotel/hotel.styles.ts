@@ -6,6 +6,7 @@ export const HotelContainer = styled(View)`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   elevation: 5;
   margin-vertical: 10px;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
 `;
 
 export const BackgroundImage = styled(ImageBackground)`

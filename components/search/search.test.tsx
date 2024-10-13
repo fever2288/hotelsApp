@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components/native';
 import SearchBar from './search.component';
 import { mockTheme } from '../../utils/test-mock-data';
 
-
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string) => {
@@ -48,5 +47,29 @@ describe('SearchBar Component', () => {
 
     fireEvent.changeText(input, 'New Query');
     expect(mockOnQueryChange).toHaveBeenCalledWith('New Query');
+  });
+
+  test('renders "X" button when query is not empty', () => {
+    const { getByTestId } = renderWithTheme(<SearchBar query="Hello" onQueryChange={() => {}} />);
+    const clearButton = getByTestId('clear-button');
+    expect(clearButton).toBeTruthy();
+  });
+
+  test('does not render "X" button when query is empty', () => {
+    const { queryByTestId } = renderWithTheme(<SearchBar query="" onQueryChange={() => {}} />);
+    const clearButton = queryByTestId('clear-button');
+    expect(clearButton).toBeNull();
+  });
+
+  test('clears the query when "X" button is pressed', () => {
+    const mockOnQueryChange = jest.fn();
+    const { getByTestId } = renderWithTheme(
+      <SearchBar query="Hello" onQueryChange={mockOnQueryChange} />
+    );
+
+    const clearButton = getByTestId('clear-button');
+    fireEvent.press(clearButton);
+
+    expect(mockOnQueryChange).toHaveBeenCalledWith('');
   });
 });

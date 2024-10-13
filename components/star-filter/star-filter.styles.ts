@@ -25,3 +25,8 @@ export const StarRow = styled(View)`
   align-items: center;
   justify-content: center;
 `;
+export const IndividualContainer = styled(View)`
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+`;

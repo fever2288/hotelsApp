@@ -5,8 +5,8 @@ import { ButtonContainer } from './button.styles';
 
 interface ButtonProps extends TouchableOpacityProps {
   onPress: () => void;
-  children: React.ReactNode; // Button content (text, icons, etc.)
-  testID?: string; // Add the testID prop
+  children: React.ReactNode;
+  testID?: string;
 }
 
 /**

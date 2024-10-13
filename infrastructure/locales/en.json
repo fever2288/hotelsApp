@@ -3,6 +3,17 @@
   "loading": "Loading...",
   "searchPlaceholder": "Search hotels...",
   "errorFetchingData": "An error occurred while fetching data",
-  "noHotels": "No hotels found. Try searching for another",
-  "filterByStars": "Filter by number of stars"
+  "noHotels": "No hotels found. Try using different criteria",
+  "filterByStars": "Filter by number of stars",
+  "address": "Address",
+  "city": "City",
+  "phone": "Phone Number",
+  "email": "Email",
+  "hotelDetails": "Hotel Details",
+  "userRating": "User rating",
+  "checkIn": "Check in time",
+  "checkOut": "Check out time",
+  "gallery": "Gallery ({{count}})",
+  "notExist": "N/A",
+  "goBack": "Back To Hotels"
 }
