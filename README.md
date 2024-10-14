@@ -1,50 +1,74 @@
-# Welcome to your Expo app 👋
+## Table of Contents
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Running Tests](#running-tests)
+- [Troubleshooting](#troubleshooting)
 
-## Get started
+## Prerequisites
 
-1. Install dependencies
+Before you begin, ensure you have met the following requirements:
 
-   ```bash
+- **Node.js**: Download and install [Node.js](https://nodejs.org/).
+- **Expo CLI**: Install Expo CLI globally by running:
+  ```sh
+  npm install -g expo-cli
+  ```
+
+## Installation
+
+To install the project, follow these steps:
+
+1. Go to the project folder
+
+2. Install the dependencies:
+   ```sh
    npm install
    ```
 
-2. Start the app
+## Running the App
 
-   ```bash
-    npx expo start
-   ```
+To run the app, choose if you want to run android or ios app. Note that iOS apps can only be run on Mac devices, while Android apps can be run on both Mac and Windows devices.
 
-In the output, you'll find options to open the app in a
+- **iOS**:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+  - Requires a Mac device.
+  - Download Xcode [Xcode](https://developer.apple.com/xcode/)
+  - Start the simulator
+  - From the root of the project run
+    ```sh
+    npm run ios
+    ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Android**:
 
-## Get a fresh project
+  - Can be run on both Mac and Windows devices.
+  - Download [Android Studio](https://developer.android.com/studio)
+  - Create simulator and start it
+  - From the root of the project run
+    ```sh
+    npm run android
+    ```
 
-When you're ready, run:
+## Running tests
 
-```bash
-npm run reset-project
+To run test, run the following command
+
+````sh
+  npm run test
+  ```
+
+## Troubleshooting
+
+If you encounter any issues, try the following steps:
+
+- Ensure all dependencies are installed correctly by running `npm install` again.
+- Make sure you have the latest version of Expo CLI by running:
+```sh
+npm install -g expo-cli
+````
+
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
