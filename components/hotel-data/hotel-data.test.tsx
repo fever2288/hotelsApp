@@ -4,8 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { ThemeProvider } from 'styled-components/native';
 
 import HotelData from './hotel-data.component';
-import { mockTheme } from '../../utils/test-mock-data';
-
+import { mockTheme } from '../../__mocks__/test-mock-data';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({

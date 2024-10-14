@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 
 import SearchBar from './search.component';
-import { mockTheme } from '../../utils/test-mock-data';
+import { mockTheme } from '../../__mocks__/test-mock-data';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({

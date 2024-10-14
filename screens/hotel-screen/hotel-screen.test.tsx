@@ -4,8 +4,9 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 
 import HotelScreen from './hotel-screen.screen';
+import { mockTheme } from '../../__mocks__/test-mock-data';
+import { mockApiHotels } from '../../__mocks__/test-mock-data';
 import { useHotelContext } from '../../store/hotels.context';
-import { mockTheme } from '../../utils/test-mock-data';
 
 jest.mock('@react-navigation/native', () => ({
   useRoute: jest.fn(),
@@ -32,25 +33,6 @@ const renderWithProviders = (children: React.ReactNode) => {
 };
 
 describe('HotelScreen Component', () => {
-  const mockHotel = {
-    id: 1,
-    name: 'Hilton',
-    location: {
-      address: 'Gran Via',
-      city: 'Madrid',
-      latitude: 40.4155,
-      longitude: -3.7074,
-    },
-    stars: 5,
-    checkIn: { from: '12:00', to: '20:00' },
-    checkOut: { from: '07:00', to: '10:00' },
-    contact: { phoneNumber: '+34123654', email: 'hilton@gmail.com' },
-    gallery: ['https://example.com/images/hilton1.jpg', 'https://example.com/images/hilton2.jpg'],
-    userRating: 9.8,
-    price: 100,
-    currency: 'EUR',
-  };
-
   beforeEach(() => {
     (useRoute as jest.Mock).mockReturnValue({
       params: { hotelId: 1 },
@@ -59,7 +41,7 @@ describe('HotelScreen Component', () => {
 
   test('should render hotel details when hotel is found', () => {
     (useHotelContext as jest.Mock).mockReturnValue({
-      hotels: [mockHotel],
+      hotels: [...mockApiHotels],
     });
 
     const { getByText, getByTestId } = renderWithProviders(<HotelScreen />);
@@ -86,7 +68,7 @@ describe('HotelScreen Component', () => {
 
   test('should render the image gallery when the gallery is available', () => {
     (useHotelContext as jest.Mock).mockReturnValue({
-      hotels: [mockHotel],
+      hotels: [...mockApiHotels],
     });
 
     const { getByTestId } = renderWithProviders(<HotelScreen />);
@@ -95,7 +77,7 @@ describe('HotelScreen Component', () => {
   });
 
   test('should not render the gallery when there are no images', () => {
-    const hotelWithoutGallery = { ...mockHotel, gallery: [] };
+    const hotelWithoutGallery = { ...mockApiHotels, gallery: [] };
 
     (useHotelContext as jest.Mock).mockReturnValue({
       hotels: [hotelWithoutGallery],

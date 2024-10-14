@@ -50,5 +50,5 @@ export const DetailText = styled(Text)`
 `;
 
 export const GalleryContainer = styled(View)`
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 `;

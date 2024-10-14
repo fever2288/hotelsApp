@@ -3,9 +3,9 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 
 import HotelComponent from './hotel.component';
+import { mockTheme } from '../../__mocks__/test-mock-data';
+import { mockApiHotels } from '../../__mocks__/test-mock-data';
 import noImage from '../../assets/images/no-image.jpg';
-import { mockTheme } from '../../utils/test-mock-data';
-import { mockApiHotels } from '../../utils/test-mock-data';
 
 describe('HotelComponent', () => {
   const renderWithTheme = (component: JSX.Element) =>

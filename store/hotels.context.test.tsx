@@ -4,8 +4,8 @@ import React from 'react';
 import { Text } from 'react-native';
 
 import { HotelProvider, useHotelContext } from './hotels.context';
+import { mockApiHotels, additionalApiHotels } from '../__mocks__/test-mock-data';
 import { Hotel } from '../types/hotel.type';
-import { mockApiHotels, additionalApiHotels } from '../utils/test-mock-data';
 
 const TestConsumer = ({ onReady }: { onReady: (addHotels: (hotels: Hotel[]) => void) => void }) => {
   const context = useHotelContext();

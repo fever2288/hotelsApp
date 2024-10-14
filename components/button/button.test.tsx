@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 
 import Button from './button.component';
-import { mockTheme } from '../../utils/test-mock-data';
+import { mockTheme } from '../../__mocks__/test-mock-data';
 
 describe('Button Component', () => {
   const renderWithTheme = (component: JSX.Element) =>

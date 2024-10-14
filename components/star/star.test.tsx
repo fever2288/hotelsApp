@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 
 import Star from './star.component';
-import { mockTheme } from '../../utils/test-mock-data';
+import { mockTheme } from '../../__mocks__/test-mock-data';
 
 describe('Star Component', () => {
   const renderWithTheme = (component: JSX.Element) =>

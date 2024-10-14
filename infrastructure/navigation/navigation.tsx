@@ -25,6 +25,8 @@ const Navigation = () => {
           options={{
             gestureEnabled: false,
             title: t('goBack'),
+            gestureDirection: 'vertical',
+            animation: 'slide_from_bottom',
           }}
         />
       </Stack.Navigator>
