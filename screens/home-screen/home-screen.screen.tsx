@@ -99,14 +99,16 @@ const HomeScreen = (): JSX.Element => {
 
   if (isError) {
     return (
-      <Info
-        image={errorImage}
-        text={t('errorFetchingData')}
-        isButtonVisible={true}
-        onButtonClick={refetch}
-        isError={true}
-        testID="error-message"
-      />
+      <Container>
+        <Info
+          image={errorImage}
+          text={t('errorFetchingData')}
+          isButtonVisible={true}
+          onButtonClick={refetch}
+          isError={true}
+          testID="error-message"
+        />
+      </Container>
     );
   }
 
@@ -136,7 +138,7 @@ const HomeScreen = (): JSX.Element => {
         data={filteredHotels}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item, index }) => (
-          <Animated.View entering={FadeIn.duration(1000).delay(index * 200)}>
+          <Animated.View entering={FadeIn.duration(500).delay(index * 100)}>
             <HotelComponent hotel={item} onPress={handlePress} />
           </Animated.View>
         )}
